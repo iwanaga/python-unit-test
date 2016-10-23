@@ -1,2 +1,32 @@
 # python-unit-test
 Python の練習
+
+# setup (Mac の場合)
+## Python Version Manager (pyenv) をインストール
+```bash
+brew install pyenv
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+```
+
+## pyenv を使って Python をインストール
+```bash
+pyenv install 3.5.2
+pyenv global 3.5.2
+
+python -V
+```
+
+## Python package をローカルインストールする
+例として、ディレクトリを `your_proj` とする。
+
+```bash
+mkdir  your_proj
+pyenv  your_proj
+source your_proj/bin/activate
+```
+
+## venv 解除
+```bash
+deactivate
+```
+

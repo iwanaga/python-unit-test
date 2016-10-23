@@ -16,12 +16,12 @@ pyenv global 3.5.2
 python -V
 ```
 
-## Python package をローカルインストールする
+## Python package をローカルインストールするための準備
 例として、ディレクトリを `your_proj` とする。
 
 ```bash
 mkdir  your_proj
-pyenv  your_proj
+pyvenv your_proj
 source your_proj/bin/activate
 ```
 

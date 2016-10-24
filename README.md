@@ -2,6 +2,8 @@
 Python の練習
 
 # setup (Mac の場合)
+`pyenv` と `pyvenv` に注意。
+
 ## Python Version Manager (pyenv) をインストール
 ```bash
 brew install pyenv

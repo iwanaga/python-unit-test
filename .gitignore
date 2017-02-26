@@ -92,3 +92,4 @@ ENV/
 .idea
 
 README.rst
+pip-selfcheck.json

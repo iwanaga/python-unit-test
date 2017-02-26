@@ -30,6 +30,10 @@ source your_proj/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+## テスト実行
+```bash
+mamba spec/*
+```
 
 ## venv 解除
 ```bash

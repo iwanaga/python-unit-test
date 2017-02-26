@@ -15,7 +15,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+lib/python*/
 lib64/
 parts/
 sdist/
@@ -90,3 +90,6 @@ ENV/
 
 # IDE
 .idea
+
+README.rst
+pip-selfcheck.json

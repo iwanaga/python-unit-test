@@ -2,6 +2,8 @@
 Python の練習
 
 # setup (Mac の場合)
+`pyenv` と `pyvenv` に注意。
+
 ## Python Version Manager (pyenv) をインストール
 ```bash
 brew install pyenv
@@ -23,6 +25,14 @@ python -V
 mkdir  your_proj
 pyvenv your_proj
 source your_proj/bin/activate
+```
+## テストライブラリをインストール
+```bash
+pip install -r requirements.txt
+```
+## テスト実行
+```bash
+mamba spec/*
 ```
 
 ## venv 解除

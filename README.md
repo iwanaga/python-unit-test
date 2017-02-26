@@ -26,6 +26,10 @@ mkdir  your_proj
 pyvenv your_proj
 source your_proj/bin/activate
 ```
+## テストライブラリをインストール
+```bash
+pip install -r requirements.txt
+```
 
 ## venv 解除
 ```bash

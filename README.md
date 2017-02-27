@@ -30,6 +30,11 @@ source your_proj/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## IntelliJ 設定
+- File > Project Structure > Project Settings > Project SDK > New
+- bin/pythonX.X を選択
+
 ## テスト実行
 ```bash
 mamba spec/*

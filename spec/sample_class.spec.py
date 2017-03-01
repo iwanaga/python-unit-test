@@ -1,4 +1,5 @@
 from expects import *
+from unittest.mock import MagicMock
 
 from lib.sample_class import *
 
@@ -8,27 +9,28 @@ with describe('SampleClass'):
         self.target = SampleClass(10)
 
     with describe('コンストラクタ'):
+        # 例外発生をテストする例
         with context('引数が文字列'):
-            # 例外発生処理のテスト例
             with it('TypeError'):
-                expect(lambda: SampleClass("string")).to(raise_error(TypeError))
+                # 注：ラムダ式の中で実行すること
+                expect(lambda: SampleClass("dummy string")).to(raise_error(TypeError))
 
     with describe('add'):
-        # 状態を変える処理のテスト例
+        # 副作用のある処理をテストする例
         with it('引数で指定した数を足して返す'):
-            # before
+            # 事前条件
             expect(self.target.number).to(equal(10))
-            # 返り値
+            # 返り値テスト
             expect(self.target.add(5)).to(equal(15))
-            # after
+            # 事後条件
             expect(self.target.number).to(equal(15))
 
     with describe('http_get'):
         # 通信やファイル入出力など、IO 処理が関わるときのテスト例
         with context('200 OK'):
-            with it('Trueを返す'):
-                expect(True).to(equal(True))
-
-        with context('404 Not Found'):
-            with it('Falseを返す'):
-                expect(False).to(equal(False))
+            with it('レスポンスボディを返す'):
+                body = '{"id":1,"message":"hello"}'
+                # MagicMockで処理を上書く。IO処理部分だけを行うメソッドを分離するのがミソ。
+                SampleClass._http_get = MagicMock(return_value=body)
+                expect(self.target.get_http_message()).to(be_a(dict))
+                expect(self.target.get_http_message()['message']).to(equal('hello'))

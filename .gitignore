@@ -95,3 +95,4 @@ README.rst
 pip-selfcheck.json
 bin/coverage*
 bin/mamba
+coverage_report/

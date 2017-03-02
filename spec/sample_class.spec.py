@@ -9,11 +9,24 @@ with describe('SampleClass'):
         self.target = SampleClass(10)
 
     with describe('コンストラクタ'):
-        # 例外発生をテストする例
-        with context('引数が文字列'):
+        with context('引数がinteger'):
+            with it('インスタンスを生成'):
+                expect(SampleClass(-1)).to(be_a(SampleClass))
+
+        with context('引数がinteger以外'):
             with it('TypeError'):
-                # 注：ラムダ式の中で実行すること
+                # 例外発生をテストする例。ラムダ式の中で実行することに注意。
                 expect(lambda: SampleClass("dummy string")).to(raise_error(TypeError))
+
+    with describe('is_even'):
+        # 引数と返り値の正しさはテストしよう。仕様書の代わりになります。
+        with context('self.numberが偶数'):
+            with it('Trueを返す'):
+                expect(SampleClass(2)).to(equal(True))
+
+        with context('self.numbberが奇数'):
+            with it('Falseを返す'):
+                expect(SampleClass(1)).to(equal(False))
 
     with describe('add'):
         # 副作用のある処理をテストする例

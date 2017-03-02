@@ -18,6 +18,16 @@ with describe('SampleClass'):
                 # 例外発生をテストする例。ラムダ式の中で実行することに注意。
                 expect(lambda: SampleClass("dummy string")).to(raise_error(TypeError))
 
+    with describe('is_even'):
+        # 引数と返り値の正しさはテストしよう。仕様書の代わりになります。
+        with context('self.numberが偶数'):
+            with it('Trueを返す'):
+                expect(SampleClass(2)).to(equal(True))
+
+        with context('self.numbberが奇数'):
+            with it('Falseを返す'):
+                expect(SampleClass(1)).to(equal(False))
+
     with describe('add'):
         # 副作用のある処理をテストする例
         with it('引数で指定した数を足して返す'):

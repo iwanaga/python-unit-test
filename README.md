@@ -36,6 +36,13 @@ pip install -r requirements.txt
 - bin/pythonX.X を選択
 
 ## テスト実行
+### 自動実行
+ファイルの変更を検知すると、自動的にテストを実行してカバレッジレポートを行う常駐スクリプト
+```bash
+./bin/start_auto_test.sh
+```
+
+### 手動実行
 単体テストのみ実行するとき
 ```bash
 mamba spec/*

@@ -1,5 +1,9 @@
 from expects import *
 from unittest.mock import MagicMock
+from unittest.mock import patch
+
+import requests
+from requests import Response
 
 from lib.sample_class import *
 
@@ -47,3 +51,16 @@ with describe('SampleClass'):
                 SampleClass._http_get = MagicMock(return_value=body)
                 expect(self.target.get_http_message()).to(be_a(dict))
                 expect(self.target.get_http_message()['message']).to(equal('hello'))
+
+        # patchでのテスト例
+        with context('200 OK を patchで'):
+            with it('レスポンスオブジェクトを返す'):
+                body = '{"id":1,"message":"hello"}'
+                my_response = Response()
+                my_response.status_code = 200
+                my_response._content = body
+
+                # patch.object で requests.getメソッドの処理を差し替える
+                with patch.object(requests, 'get', return_value=my_response):
+                    expect(self.target.get_http_message()).to(be_a(dict))
+                    expect(self.target.get_http_message()['message']).to(equal('hello'))

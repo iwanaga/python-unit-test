@@ -96,3 +96,6 @@ pip-selfcheck.json
 bin/coverage*
 bin/mamba
 coverage_report/
+bin/easy_install*
+bin/pip*
+bin/python*

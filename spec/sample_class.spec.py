@@ -24,7 +24,7 @@ with describe('SampleClass'):
             with it('Trueを返す'):
                 expect(SampleClass(2)).to(equal(True))
 
-        with context('self.numbberが奇数'):
+        with context('self.numberが奇数'):
             with it('Falseを返す'):
                 expect(SampleClass(1)).to(equal(False))
 

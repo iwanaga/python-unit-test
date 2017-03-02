@@ -8,6 +8,9 @@ class SampleClass:
         self.number = number
         self.http_request = requests
 
+    def is_even(self):
+        return self.number % 2 == 0
+
     def add(self, integer):
         self.number = self.number + integer
         return self.number

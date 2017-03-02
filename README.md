@@ -36,8 +36,19 @@ pip install -r requirements.txt
 - bin/pythonX.X を選択
 
 ## テスト実行
+単体テストのみ実行するとき
 ```bash
 mamba spec/*
+```
+
+単体テスト + テストカバレッジ計測
+```bash
+./bin/run_spec.sh
+```
+
+カバレッジレポート閲覧＆カバーできていない箇所を探すとき
+```bash
+open coverage_report/index.html
 ```
 
 ## venv 解除

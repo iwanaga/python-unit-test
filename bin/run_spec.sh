@@ -12,3 +12,7 @@ mamba --enable-coverage spec/*
 # レポート
 coverage report
 coverage html -d coverage_report
+
+echo ""
+echo "カバーできていない箇所を探したいとき:"
+echo "open coverage_report/index.html"

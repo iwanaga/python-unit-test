@@ -9,10 +9,13 @@ with describe('SampleClass'):
         self.target = SampleClass(10)
 
     with describe('コンストラクタ'):
-        # 例外発生をテストする例
-        with context('引数が文字列'):
+        with context('引数がinteger'):
+            with it('インスタンスを生成'):
+                expect(SampleClass(-1)).to(be_a(SampleClass))
+
+        with context('引数がinteger以外'):
             with it('TypeError'):
-                # 注：ラムダ式の中で実行すること
+                # 例外発生をテストする例。ラムダ式の中で実行することに注意。
                 expect(lambda: SampleClass("dummy string")).to(raise_error(TypeError))
 
     with describe('add'):

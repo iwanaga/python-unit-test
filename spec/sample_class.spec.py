@@ -22,11 +22,11 @@ with describe('SampleClass'):
         # 引数と返り値の正しさはテストしよう。仕様書の代わりになります。
         with context('self.numberが偶数'):
             with it('Trueを返す'):
-                expect(SampleClass(2)).to(equal(True))
+                expect(SampleClass(2).is_even()).to(equal(True))
 
         with context('self.numberが奇数'):
             with it('Falseを返す'):
-                expect(SampleClass(1)).to(equal(False))
+                expect(SampleClass(1).is_even()).to(equal(False))
 
     with describe('add'):
         # 副作用のある処理をテストする例

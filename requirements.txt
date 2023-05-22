@@ -2,4 +2,4 @@ mamba==0.8.6
 expects==0.8.0
 doublex-expects==0.6.0
 coverage==4.3.4
-requests==2.20.0
+requests==2.31.0
